@@ -47,7 +47,7 @@ class panelLiveView(wx.Panel):
         sb_1 = wx.StaticBox(self, -1, "Select Monitor")#, size=(250,-1))
         sbSizer_1 = wx.StaticBoxSizer (sb_1, wx.VERTICAL)
         self.MonitorList = ['Monitor %s' % (int(m) + 1) for m in range(options.GetOption("Monitors"))]
-        self.thumbnailNumber = wx.ComboBox(self, -1, size=(-1,-1) , choices=self.MonitorList, style=wx.CB_DROPDOWN | wx.CB_READONLY | wx.CB_SORT)
+        self.thumbnailNumber = wx.ComboBox(self, -1, size=(-1,-1) , choices=self.MonitorList, style=wx.CB_DROPDOWN | wx.CB_READONLY)
         self.Bind(wx.EVT_COMBOBOX, self.onChangeMonitor, self.thumbnailNumber)
 
         self.sourceTXTBOX =  wx.TextCtrl (self, -1, "No monitor selected", style=wx.TE_READONLY)

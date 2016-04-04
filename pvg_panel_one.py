@@ -127,7 +127,7 @@ class panelConfigure(wx.Panel):
         
         n_monitors = options.GetOption("Monitors")
         self.MonitorList = ['Monitor %s' % (int(m) + 1) for m in range( n_monitors )]
-        self.thumbnailNumber = wx.ComboBox(self, -1, size=(-1,-1) , choices=self.MonitorList, style=wx.CB_DROPDOWN | wx.CB_READONLY | wx.CB_SORT)
+        self.thumbnailNumber = wx.ComboBox(self, -1, size=(-1,-1) , choices=self.MonitorList, style=wx.CB_DROPDOWN | wx.CB_READONLY)
         self.Bind ( wx.EVT_COMBOBOX, self.onChangingMonitor, self.thumbnailNumber)
 
         self.currentSource = wx.TextCtrl (self, -1, "No Source Selected", style=wx.TE_READONLY)
@@ -162,7 +162,7 @@ class panelConfigure(wx.Panel):
         n_cams = options.GetOption("Webcams")
         self.WebcamsList = [ 'Webcam %s' % (int(w) +1) for w in range( n_cams ) ]
         rb1 = wx.RadioButton(self, -1, 'Camera', style=wx.RB_GROUP)
-        source1 = wx.ComboBox(self, -1, size=(285,-1) , choices = self.WebcamsList, style=wx.CB_DROPDOWN | wx.CB_READONLY | wx.CB_SORT)
+        source1 = wx.ComboBox(self, -1, size=(285,-1) , choices = self.WebcamsList, style=wx.CB_DROPDOWN | wx.CB_READONLY)
         self.Bind(wx.EVT_COMBOBOX, self.sourceCallback, source1)
         
         rb2 = wx.RadioButton(self, -1, 'File' )

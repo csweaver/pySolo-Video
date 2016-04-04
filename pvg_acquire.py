@@ -74,7 +74,7 @@ class comboFileBrowser(wx.ComboBox):
         self.browsevalue=browsevalue
         self.changeCallback = changeCallback
         
-        wx.ComboBox.__init__(self, parent, id, value, pos, size, choices + [browsevalue], style=wx.CB_DROPDOWN | wx.CB_READONLY | wx.CB_SORT)
+        wx.ComboBox.__init__(self, parent, id, value, pos, size, choices + [browsevalue], style=wx.CB_DROPDOWN | wx.CB_READONLY )
         self.Bind(wx.EVT_COMBOBOX, self.onItemChanged)
         
     def onItemChanged(self, event):
@@ -184,7 +184,7 @@ class pvg_AcquirePanel(wx.Panel):
             gridSizer.Add(comboFileBrowser(self, wx.ID_ANY, size=(-1,-1), dialogTitle = "Choose the output file", startDirectory = options.GetOption("Data_Folder"), value = md['outputfile'], fileMask = "Output File (*.txt)|*.txt", browsevalue="Browse for output...", changeCallback = partial(self.onChangeDropDown, [mn, "outputfile"])), 0, wx.ALL|wx.ALIGN_CENTER, 5 )
 
             #TRACKTYPE
-            ttcb = wx.ComboBox(self, -1, size=(-1,-1), value=md['track_type'], choices=tracktypes, style=wx.CB_DROPDOWN | wx.CB_READONLY | wx.CB_SORT)
+            ttcb = wx.ComboBox(self, -1, size=(-1,-1), value=md['track_type'], choices=tracktypes, style=wx.CB_DROPDOWN | wx.CB_READONLY)
             ttcb.Bind (wx.EVT_COMBOBOX, partial(self.onChangeDropDown, [mn, "track_type"]))
             gridSizer.Add(ttcb , 0, wx.ALL|wx.ALIGN_CENTER, 5)
             
