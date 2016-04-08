@@ -21,3 +21,4 @@ REQUIRES:
 * `wxpython 2.8`
 * `opencv`
 * `numpy`
+* `pyserial`
